@@ -5,7 +5,6 @@ plugins {
 
 almostgradle.setup {
     withSourcesJar = false
-    recipeViewers.emi.mavenRepository
 }
 
 neoForge {
