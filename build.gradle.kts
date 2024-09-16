@@ -1,6 +1,6 @@
 plugins {
-    id("net.neoforged.moddev") version "2.0.+"
-    id("com.almostreliable.almostgradle") version "1.+"
+    id("net.neoforged.moddev") version "2.0.30-beta"
+    id("com.almostreliable.almostgradle") version "1.1.1"
 }
 
 almostgradle.setup {
