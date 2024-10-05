@@ -1,5 +1,8 @@
 package com.almostreliable.merequester;
 
+import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.util.FastColor;
+
 import com.almostreliable.merequester.client.RequesterScreen;
 import com.almostreliable.merequester.client.RequesterTerminalScreen;
 import com.almostreliable.merequester.core.Registration;
@@ -35,6 +38,10 @@ public final class MERequesterClient {
     }
 
     private void registerColors(RegisterColorHandlersEvent.Item event) {
-        event.register(new StaticItemColor(AEColor.TRANSPARENT), Registration.REQUESTER_TERMINAL);
+        event.register(makeOpaque(new StaticItemColor(AEColor.TRANSPARENT)), Registration.REQUESTER_TERMINAL);
+    }
+
+    private static ItemColor makeOpaque(ItemColor itemColor) {
+        return (stack, tintIndex) -> FastColor.ARGB32.opaque(itemColor.getColor(stack, tintIndex));
     }
 }
